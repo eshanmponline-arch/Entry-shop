@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ग्राहक पैसा एंट्री सिस्टम</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div><h1>श्री श्याम डिजिटल स्टूडियो</h1><p>ग्राहक पैसा एंट्री एवं हिसाब सिस्टम</p></div>
+  <button id="exportAllBtn" class="btn secondary">📄 पूरी रिपोर्ट PDF</button>
+</header>
+
+<main class="container">
+  <section class="stats">
+    <div class="stat"><span>आज की एंट्री</span><strong id="todayCount">0</strong></div>
+    <div class="stat"><span>आज निकाली राशि</span><strong id="todayWithdraw">₹0.00</strong></div>
+    <div class="stat"><span>कुल एंट्री</span><strong id="totalCount">0</strong></div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2 id="formTitle">नई ग्राहक एंट्री</h2><button id="clearBtn" class="btn light">↻ नया फॉर्म</button></div>
+    <form id="entryForm">
+      <input type="hidden" id="editId">
+      <div class="grid">
+        <label>ग्राहक का नाम<input id="name" required maxlength="80" placeholder="नाम लिखें"></label>
+        <label>Aadhaar नंबर<input id="aadhaar" inputmode="numeric" maxlength="12" placeholder="12 अंकों का Aadhaar"></label>
+        <label>बैंक का नाम<input id="bank" maxlength="80" placeholder="बैंक का नाम"></label>
+        <label>पहले का बैलेंस (₹)<input id="oldBalance" type="number" min="0" step="0.01" value="0" required></label>
+        <label>निकाली गई राशि (₹)<input id="withdraw" type="number" min="0" step="0.01" value="0" required></label>
+        <label>बचा हुआ बैलेंस (₹)<input id="remaining" type="number" readonly value="0"></label>
+      </div>
+      <div class="note">Aadhaar नंबर को रिकॉर्ड सूची में masked रखा गया है। PDF में दर्ज किया गया पूरा Aadhaar नंबर दिखेगा।</div>
+      <div class="actions">
+        <button class="btn primary" type="submit">💾 एंट्री सेव करें</button>
+        <button class="btn success" type="button" id="savePdfBtn">🧾 सेव करके PDF</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2>ग्राहक एंट्री रिकॉर्ड</h2><input id="search" class="search" type="search" placeholder="नाम / बैंक / Aadhaar से खोजें"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>क्रम</th><th>नाम</th><th>Aadhaar</th><th>बैंक</th><th>पहले का बैलेंस</th><th>निकासी</th><th>बचा बैलेंस</th><th>तारीख</th><th>कार्य</th></tr></thead>
+        <tbody id="recordsBody"></tbody>
+      </table>
+    </div>
+    <div id="empty" class="empty">अभी कोई एंट्री नहीं है।</div>
+  </section>
+</main>
+<footer>यह सिस्टम आपके ब्राउज़र में स्थानीय रूप से रिकॉर्ड रखता है। नियमित PDF/backup बनाते रहें।</footer>
+
+<!-- PDF के लिए छिपा हुआ, Hindi-compatible receipt template -->
+<div id="pdfArea" aria-hidden="true"></div>
+<script src="script.js"></script>
+</body>
+</html>

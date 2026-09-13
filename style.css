@@ -1,0 +1,34 @@
+*{box-sizing:border-box}
+:root{font-family:Arial,"Noto Sans Devanagari","Mangal",sans-serif;color:#172033;background:#f4f7fb}
+body{margin:0}
+.topbar{background:linear-gradient(135deg,#172554,#2563eb);color:#fff;padding:22px 5%;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.topbar h1{margin:0;font-size:28px}.topbar p{margin:6px 0 0;opacity:.9}
+.container{width:min(1400px,94%);margin:24px auto}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}
+.stat,.card{background:#fff;border-radius:16px;box-shadow:0 8px 25px rgba(20,40,80,.08)}.stat{padding:20px}.stat span{display:block;color:#667085}.stat strong{display:block;font-size:25px;margin-top:8px}
+.card{padding:22px;margin-bottom:20px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.section-head h2{margin:0;font-size:21px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}label{font-weight:700;font-size:14px;color:#344054}
+input{width:100%;margin-top:7px;padding:12px 13px;border:1px solid #d0d5dd;border-radius:10px;font-size:15px;outline:none}
+input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}input[readonly]{background:#eef4ff;font-weight:700}
+.search{max-width:320px;margin:0}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer}.primary{background:#2563eb;color:#fff}.secondary{background:#fff;color:#172554}.success{background:#16a34a;color:#fff}.light{background:#eef2f7;color:#344054}
+.actions{display:flex;gap:10px;margin-top:18px}.note{margin-top:14px;color:#667085;font-size:13px}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:1000px}th,td{padding:12px 10px;border-bottom:1px solid #eaecf0;text-align:left;font-size:13px}th{background:#f8fafc;color:#475467}
+td .mini{border:0;padding:7px 9px;border-radius:8px;cursor:pointer;margin:2px;font-weight:700}.edit{background:#e8f0ff;color:#1d4ed8}.pdf{background:#eaf8ee;color:#15803d}.del{background:#fff0f0;color:#dc2626}
+.empty{text-align:center;padding:25px;color:#667085}footer{text-align:center;color:#667085;padding:15px 10px 30px;font-size:13px}
+#pdfArea{position:fixed;left:-10000px;top:0;width:1123px;background:white}
+.pdf-page{width:794px;min-height:1123px;background:#fff;padding:52px 58px;font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;color:#111}
+.pdf-title{text-align:center;font-size:25px;font-weight:800;margin-bottom:8px}.pdf-subtitle{text-align:center;font-size:19px;font-weight:700;margin-bottom:22px}
+.pdf-line{border-top:2px solid #222;margin-bottom:28px}.pdf-table{width:100%;border-collapse:collapse;font-size:17px}
+.pdf-table td{border:1px solid #c8c8c8;padding:13px 15px}.pdf-table td:first-child{font-weight:700;width:42%;background:#f5f5f5}
+.pdf-foot{margin-top:30px;text-align:center;font-size:13px;color:#555}.pdf-report-table{font-size:11px!important}.pdf-report-table td,.pdf-report-table th{padding:7px!important;border:1px solid #aaa!important}
+@media(max-width:850px){.topbar{flex-direction:column;align-items:flex-start}.stats,.grid{grid-template-columns:1fr}.section-head{align-items:stretch;flex-direction:column}.search{max-width:none}.actions{flex-direction:column}.btn{width:100%}}
+
+.pdf-report-page{width:1123px;min-height:794px;padding:38px 42px;background:#fff;font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;color:#111}
+.pdf-report-title{text-align:center;font-size:24px;font-weight:800;margin-bottom:6px}
+.pdf-report-subtitle{text-align:center;font-size:17px;font-weight:700;margin-bottom:16px}
+.pdf-report-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:12px}
+.pdf-report-table th,.pdf-report-table td{border:1px solid #999!important;padding:7px 5px!important;word-break:break-word;vertical-align:middle}
+.pdf-report-table th{background:#f1f3f5;text-align:center}
+.pdf-report-table th:nth-child(1){width:5%}.pdf-report-table th:nth-child(2){width:17%}
+.pdf-report-table th:nth-child(3){width:14%}.pdf-report-table th:nth-child(4){width:14%}
+.pdf-report-table th:nth-child(5){width:12%}.pdf-report-table th:nth-child(6){width:12%}
+.pdf-report-table th:nth-child(7){width:12%}.pdf-report-table th:nth-child(8){width:14%}
